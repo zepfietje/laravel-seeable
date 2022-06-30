@@ -21,7 +21,9 @@ trait Seeable
 
     public function see(): bool
     {
-        if ($this->{$this->getSeenAtColumn()}->diffInSeconds() < config('seeable.throttle')) {
+        $seenAt = $this->{$this->getSeenAtColumn()};
+
+        if ($seenAt !== null && $seenAt->diffInSeconds() < config('seeable.throttle')) {
             return false;
         }
 
