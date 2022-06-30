@@ -1,5 +1,5 @@
-[![Packagist Version](https://img.shields.io/packagist/v/zepfietje/laravel-seeable)](https://packagist.org/packages/zepfietje/laravel-stubs)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/zepfietje/laravel-seeable)](https://packagist.org/packages/zepfietje/laravel-stubs/stats)
+[![Packagist Version](https://img.shields.io/packagist/v/zepfietje/laravel-seeable)](https://packagist.org/packages/zepfietje/laravel-seeable)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/zepfietje/laravel-seeable)](https://packagist.org/packages/zepfietje/laravel-seeable/stats)
 
 # Laravel Seeable
 
