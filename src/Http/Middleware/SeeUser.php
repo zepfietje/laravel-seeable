@@ -7,6 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use ZepFietje\Seeable\Concerns\Seeable;
 
 class SeeUser
 {
@@ -17,6 +18,16 @@ class SeeUser
 
     public function terminate(Request $request, Response|RedirectResponse|JsonResponse $response): void
     {
-        $request->user()?->see();
+        $user = $request->user();
+
+        if ($user === null) {
+            return;
+        }
+
+        if (! in_array(Seeable::class, class_uses_recursive($user))) {
+            return;
+        }
+
+        $user->see();
     }
 }
