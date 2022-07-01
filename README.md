@@ -58,7 +58,7 @@ This package makes it easy to keep track of the date and time a user was last se
 
 ```php
 User::seenAfter('2022-06-30')->get();
-$dailyActiveUsers = User::seenLastDay()->count();
-$weeklyActiveUsers = User::seenLastWeek()->count();
-$monthlyActiveUsers = User::seenLastMonth()->count();
+$dailyActiveUsers = User::seenPastDay()->count();
+$weeklyActiveUsers = User::seenPastWeek()->count();
+$monthlyActiveUsers = User::seenPastMonth()->count();
 ```

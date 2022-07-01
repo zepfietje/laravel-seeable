@@ -11,9 +11,9 @@ class SeeableScope implements Scope
 {
     protected static array $extensions = [
         'SeenAfter',
-        'SeenLastDay',
-        'SeenLastWeek',
-        'SeenLastMonth',
+        'SeenPastDay',
+        'SeenPastWeek',
+        'SeenPastMonth',
     ];
 
     public function apply(Builder $builder, Model $model): void
@@ -35,26 +35,26 @@ class SeeableScope implements Scope
         );
     }
 
-    protected function addSeenLastDay(Builder $builder): void
+    protected function addSeenPastDay(Builder $builder): void
     {
         $builder->macro(
-            'seenLastDay',
+            'seenPastDay',
             fn (Builder $builder) => $builder->seenAfter(now()->subDay()),
         );
     }
 
-    protected function addSeenLastWeek(Builder $builder): void
+    protected function addSeenPastWeek(Builder $builder): void
     {
         $builder->macro(
-            'seenLastWeek',
+            'seenPastWeek',
             fn (Builder $builder) => $builder->seenAfter(now()->subWeek()),
         );
     }
 
-    protected function addSeenLastMonth(Builder $builder): void
+    protected function addSeenPastMonth(Builder $builder): void
     {
         $builder->macro(
-            'seenLastMonth',
+            'seenPastMonth',
             fn (Builder $builder) => $builder->seenAfter(now()->subMonth()),
         );
     }
