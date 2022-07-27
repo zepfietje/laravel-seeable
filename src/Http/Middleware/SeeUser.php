@@ -3,20 +3,17 @@
 namespace ZepFietje\Seeable\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use ZepFietje\Seeable\Concerns\Seeable;
 
 class SeeUser
 {
-    public function handle(Request $request, Closure $next): Response|RedirectResponse|JsonResponse
+    public function handle(Request $request, Closure $next): mixed
     {
         return $next($request);
     }
 
-    public function terminate(Request $request, Response|RedirectResponse|JsonResponse $response): void
+    public function terminate(Request $request, mixed $response): void
     {
         $user = $request->user();
 
