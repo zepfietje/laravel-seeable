@@ -7,16 +7,17 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\BinaryFileResponse as FileResponse;
 use ZepFietje\Seeable\Concerns\Seeable;
 
 class SeeUser
 {
-    public function handle(Request $request, Closure $next): Response|RedirectResponse|JsonResponse
+    public function handle(Request $request, Closure $next): Response|RedirectResponse|JsonResponse|FileResponse
     {
         return $next($request);
     }
 
-    public function terminate(Request $request, Response|RedirectResponse|JsonResponse $response): void
+    public function terminate(Request $request, Response|RedirectResponse|JsonResponse|FileResponse $response): void
     {
         $user = $request->user();
 
