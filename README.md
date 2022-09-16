@@ -7,15 +7,15 @@ This package makes it easy to keep track of the date and time a user was last se
 
 ## Installation
 
-1. Install this package.
+1. Install this package:
    ```bash
    composer require zepfietje/laravel-seeable
    ```
-2. Optionally publish the configuration file.
+2. Optionally publish the configuration file:
     ```bash
     php artisan vendor:publish --tag="seeable-config"
     ```
-3. Add a `seen_at` column to your users table.
+3. Add a `seen_at` column to your users table:
    ```php
    return new class extends Migration
    {
@@ -29,7 +29,7 @@ This package makes it easy to keep track of the date and time a user was last se
        // ...
    };
    ```
-4. Add the `Seeable` concern to your user model.
+4. Add the `Seeable` concern to your user model:
    ```php
    namespace App\Models;
 
@@ -42,7 +42,7 @@ This package makes it easy to keep track of the date and time a user was last se
        use Seeable;
    }
    ```
-5. Register the `SeeUser` middleware in your `app/Http/Kernel.php` file.
+5. Register the `SeeUser` middleware in your `app/Http/Kernel.php` file:
    ```php
    protected $middlewareGroups = [
        'web' => [
