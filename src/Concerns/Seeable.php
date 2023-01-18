@@ -5,6 +5,12 @@ namespace ZepFietje\Seeable\Concerns;
 use DateTime;
 use ZepFietje\Seeable\Scopes\SeeableScope;
 
+/**
+ * @method static \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder seenAfter(DateTime|string $value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder seenPastDay()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder seenPastWeek()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder seenPastMonth()
+ */
 trait Seeable
 {
     public static function bootSeeable(): void
